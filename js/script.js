@@ -49,8 +49,19 @@ $(document).ready(function() {
 
     });
 
-
-
+    $(document).on('click', '#loupemeteo', function() {
+        $.ajax({
+            url: 'https://api.weatherstack.com/current',
+            data: {
+                access_key: 'f38c28e4d64cb16674534208c3386a3d',
+                query: 'New York'
+            },
+            dataType: 'json',
+            success: function(apiResponse) {
+                console.log(`Current temperature in ${apiResponse.location.name} is ${apiResponse.current.temperature}℃`);
+            }
+        });
+    });
 
 
 
