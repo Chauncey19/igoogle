@@ -10,7 +10,7 @@ $(document).ready(function() {
             $("#widgetmeteo").append('<h1 class="pt-3 h-25 text-center">Météo</h1>');
             $("#widgetmeteo").append('<form class="form-inline ml-3" id="formmeteo"></form>');
             $("#formmeteo").append('<input type="name" class="form-control w-75" id="inputmeteo" placeholder="Entrez une ville">');
-            $("#formmeteo").append('<input type="image" class="ml-3" src="./images/loupe.png" alt="search" height="30px" id="loupemeteo">');
+            $("#formmeteo").append('<input class="pl-3" type="image" alt="meteo" src="./images/loupe.png" height="40rem" id="loupemeteo">');
             event.preventDefault();
         }
         clicmeteo--;
@@ -24,6 +24,25 @@ $(document).ready(function() {
         clicmeteo++;
 
     });
+
+    $(document).on('click', '#loupemeteo', function() {
+
+        $("#widgetmeteo").append("<p>OK</p>")
+        $.ajax({
+            url: 'https://api.weatherstack.com/current',
+            data: {
+                access_key: 'f38c28e4d64cb16674534208c3386a3d',
+                query: 'New York'
+            },
+            dataType: 'json',
+            success: function(apiResponse) {
+                console.log(`Current temperature in ${apiResponse.location.name} is ${apiResponse.current.temperature}℃`);
+            }
+        });
+
+        event.preventDefault();
+
+    });
     var clictwit = 0;
     $("#twitter").click(function() {
 
@@ -34,7 +53,7 @@ $(document).ready(function() {
             $("#widgettwitter").append('<h1 class="pt-3 h-25 text-center">Twitter</h1>');
             $("#widgettwitter").append('<form class="form-inline ml-3" id="formtwitter"></form>');
             $("#formtwitter").append('<input type="name" class="form-control w-75" id="inputtwitter" placeholder="Nom">');
-            $("#formtwitter").append('<input type="image" class="ml-3" src="./images/loupe.png" alt="search" height="30px" id="loupetwitter">');
+            $("#formtwitter").append('<input type="image" class="ml-3" src="./images/loupe.png" alt="meteo" height="30px" id="loupetwitter">');
             event.preventDefault();
         }
         clictwit--;
@@ -49,19 +68,19 @@ $(document).ready(function() {
 
     });
 
-    $(document).on('click', '#loupemeteo', function() {
-        $.ajax({
-            url: 'https://api.weatherstack.com/current',
-            data: {
-                access_key: 'f38c28e4d64cb16674534208c3386a3d',
-                query: 'New York'
-            },
-            dataType: 'json',
-            success: function(apiResponse) {
-                console.log(`Current temperature in ${apiResponse.location.name} is ${apiResponse.current.temperature}℃`);
-            }
-        });
-    });
+    /*     $(document).on('click', '#loupemeteo', function() {
+            $.ajax({
+                url: 'https://api.weatherstack.com/current',
+                data: {
+                    access_key: 'f38c28e4d64cb16674534208c3386a3d',
+                    query: 'New York'
+                },
+                dataType: 'json',
+                success: function(apiResponse) {
+                    console.log(`Current temperature in ${apiResponse.location.name} is ${apiResponse.current.temperature}℃`);
+                }
+            });
+        }); */
 
 
 
