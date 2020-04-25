@@ -1,0 +1,17 @@
+#back1,
+#back3 {
+    background: rgba(0, 0, 0, 0.979);
+}
+
+#back2 {
+    background: url('../images/background.jpg');
+    height: 50rem;
+}
+
+#back3 {
+    height: 3rem;
+}
+
+.pt-2 {
+    color: white;
+}
