@@ -24,44 +24,32 @@ $(document).ready(function() {
         clicmeteo++;
 
     });
-
-    $(document).on('click', '#loupemeteo', function() {
-        $.ajax({
-            url: 'https://api.weatherstack.com/current',
-            data: {
-                access_key: 'f38c28e4d64cb16674534208c3386a3d',
-                query: 'New York'
-            },
-            dataType: 'json',
-            success: function(apiResponse) {
-                console.log(`Current temperature in ${apiResponse.location.name} is ${apiResponse.current.temperature}℃`);
-            }
-        });
-
-    });
+    var clictwit = 0;
     $("#twitter").click(function() {
 
-        if (clictwitter == 0) {
+        if (clictwit == 0) {
             $("#widgettwitter").css('background', 'white');
             $("#widgettwitter").css('border-radius', '5px');
-            $("#widgettwitter").append('<div class="row bg-dark"> <input class=" offset-md-10 pr-3 pt-3 pb-2" type="image" alt="twitt" src="./images/croix.png" height="50rem" id="croixtwitt"></div>');
+            $("#widgettwitter").append('<div class="row bg-dark"> <input class=" offset-md-10 pr-3 pt-3 pb-2" type="image" alt="meteo" src="./images/croix.png" height="50rem" id="croixtwitter"></div>');
             $("#widgettwitter").append('<h1 class="pt-3 h-25 text-center">Twitter</h1>');
-            $("#widgettwitter").append('<form class="form-inline ml-3" id="formtwitt"></form>');
-            $("#formtwitt").append('<input type="name" class="form-control w-75" id="inputtwitt" placeholder="Nom">');
-            $("#formtwitt").append('<input type="image" class="ml-3" src="./images/loupe.png" alt="search" height="30px" id="loupetwitt">');
+            $("#widgettwitter").append('<form class="form-inline ml-3" id="formtwitter"></form>');
+            $("#formtwitter").append('<input type="name" class="form-control w-75" id="inputtwitter" placeholder="Nom">');
+            $("#formtwitter").append('<input type="image" class="ml-3" src="./images/loupe.png" alt="search" height="30px" id="loupetwitter">');
             event.preventDefault();
         }
-        clictwitter--;
+        clictwit--;
     });
 
-    $(document).on('click', '#croixtwitt', function() {
+    $(document).on('click', '#croixtwitter', function() {
 
         $("#widgettwitter").css("background", "");
         $("#widgettwitter").empty();
         event.preventDefault();
-        clictwitter++;
+        clictwit++;
 
     });
+
+
 
 
 
