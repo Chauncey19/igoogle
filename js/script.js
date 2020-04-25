@@ -30,7 +30,7 @@ $(document).ready(function() {
 
 
         $.ajax({
-            url: 'http://api.weatherstack.com/current',
+            url: '//api.weatherstack.com/current',
             data: {
                 access_key: 'f38c28e4d64cb16674534208c3386a3d',
                 query: ville
