@@ -26,17 +26,22 @@ $(document).ready(function() {
     });
 
     $(document).on('click', '#loupemeteo', function() {
+        var ville = $('#inputmeteo').val();
 
-        $("#widgetmeteo").append("<p>OK</p>")
+
         $.ajax({
-            url: 'https://api.weatherstack.com/current',
+            url: 'http://api.weatherstack.com/current',
             data: {
                 access_key: 'f38c28e4d64cb16674534208c3386a3d',
-                query: 'New York'
+                query: ville
             },
             dataType: 'json',
             success: function(apiResponse) {
-                console.log(`Current temperature in ${apiResponse.location.name} is ${apiResponse.current.temperature}℃`);
+
+
+                $("#widgetmeteo").append('<p class="text-center mt-4" id="txtmeteo">' + `${apiResponse.location.name} : ${apiResponse.current.temperature} ℃` + '</p>');
+                $("#widgetmeteo").append('<p class="text-center" id="txtmeteo"> Heure locale: ' + `${apiResponse.location.localtime}` + '</p>');
+                $("#widgetmeteo").append('<img class="rounded mx-auto d-block mt-6" src="' + `${apiResponse.current.weather_icons}` + '" alt="imgmeteo">');
             }
         });
 
@@ -49,7 +54,7 @@ $(document).ready(function() {
         if (clictwit == 0) {
             $("#widgettwitter").css('background', 'white');
             $("#widgettwitter").css('border-radius', '5px');
-            $("#widgettwitter").append('<div class="row bg-dark"> <input class=" offset-md-10 pr-3 pt-3 pb-2" type="image" alt="meteo" src="./images/croix.png" height="50rem" id="croixtwitter"></div>');
+            $("#widgettwitter").append('<div class="row bg-dark"> <input class=" offset-md-10 pr-3 pt-3 pb-2 " type="image" alt="meteo" src="./images/croix.png" height="50rem" id="croixtwitter"></div>');
             $("#widgettwitter").append('<h1 class="pt-3 h-25 text-center">Twitter</h1>');
             $("#widgettwitter").append('<form class="form-inline ml-3" id="formtwitter"></form>');
             $("#formtwitter").append('<input type="name" class="form-control w-75" id="inputtwitter" placeholder="Nom">');
@@ -68,19 +73,7 @@ $(document).ready(function() {
 
     });
 
-    /*     $(document).on('click', '#loupemeteo', function() {
-            $.ajax({
-                url: 'https://api.weatherstack.com/current',
-                data: {
-                    access_key: 'f38c28e4d64cb16674534208c3386a3d',
-                    query: 'New York'
-                },
-                dataType: 'json',
-                success: function(apiResponse) {
-                    console.log(`Current temperature in ${apiResponse.location.name} is ${apiResponse.current.temperature}℃`);
-                }
-            });
-        }); */
+
 
 
 
