@@ -31,7 +31,7 @@ $(document).ready(function() {
 
 
             $.ajax({
-                url: 'http://api.weatherapi.com/v1/current.json',
+                url: 'https://api.weatherapi.com/v1/current.json',
                 data: {
                     key: '781c30ec70e74a7ea2890526202604',
                     q: ville
@@ -56,7 +56,7 @@ $(document).ready(function() {
 
 
                 $.ajax({
-                    url: 'http://api.weatherapi.com/v1/current.json',
+                    url: 'https://api.weatherapi.com/v1/current.json',
                     data: {
                         key: '781c30ec70e74a7ea2890526202604',
                         q: ville
