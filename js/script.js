@@ -96,13 +96,14 @@ $(document).ready(function() {
         if (clictwit == 0) {
             $("#widgettwitter").css('background', 'white');
             $("#widgettwitter").css('border-radius', '5px');
+            $("#widgettwitter").css('overflow', 'scroll');
             $("#widgettwitter").append('<div class="row bg-dark"> <input class=" offset-md-10 pr-3 pt-3 pb-2 " type="image" alt="meteo" src="./images/croix.png" height="50rem" id="croixtwitter"></div>');
             $("#widgettwitter").append('<h1 class="pt-3 h-25 text-center">Twitter</h1>');
-            $("#widgettwitter").append('<form class="form-inline ml-3" id="formtwitter"></form>');
-            $("#formtwitter").append('<input type="name" class="form-control w-75" id="inputtwitter" placeholder="Nom">');
-            $("#formtwitter").append('<input type="image" class="ml-3" src="./images/loupe.png" alt="meteo" height="30px" id="loupetwitter">');
-            $("#formtwitter").append('<a class = "pt-4 offset-md-3" href = "https://twitter.com/MichelBillaud?ref_src=twsrc%5Etfw"> Tweets by MichelBillaud </a> <script async src="https:/ / platform.twitter.com / widgets.js " charset="utf - 8 "></script>');
+            $("#widgettwitter").append('<a class="twitter-timeline" href="https://twitter.com/MichelBillaud?ref_src=twsrc%5Etfw">Tweets by MichelBillaud</a>');
+            $("#widgettwitter").append('<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>');
             event.preventDefault();
+
+
         }
         clictwit--;
     });
@@ -110,6 +111,7 @@ $(document).ready(function() {
     $(document).on('click', '#croixtwitter', function() {
 
         $("#widgettwitter").css("background", "");
+        $("#widgettwitter").css('overflow', 'hidden');
         $("#widgettwitter").empty();
         event.preventDefault();
         clictwit++;
