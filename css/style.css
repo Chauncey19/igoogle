@@ -5,13 +5,28 @@
 
 #back2 {
     background: url('../images/background.jpg');
-    height: 50rem;
+    height: 55rem;
 }
 
 #back3 {
-    height: 3rem;
+    height: 4rem;
 }
 
 .pt-2 {
     color: white;
+}
+
+#txtmeteo {
+    font-weight: bold;
+}
+
+#widgetmeteo,
+#widgetgoogle,
+#widgettwitter,
+#widgetmaps {
+    height: 22rem;
+}
+
+#map {
+    height: 20rem;
 }
