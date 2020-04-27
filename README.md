@@ -1,6 +1,6 @@
 # Chauncey19.github.io
 
-Fonctionnalités ok :
+Fonctionnalitées ok :
 
 -widget twitter
 -widget maps
