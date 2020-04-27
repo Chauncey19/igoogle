@@ -186,7 +186,7 @@ $(document).ready(function() {
             var search = $('#inputsearch').val();
             $("#widgetgoogle").css("background", "");
             $("#widgetgoogle").css('overflow', 'hidden');
-            $("#widgetgoogle").empty();
+            $("#widgetgoogle").remove();
             $("#widgetgoogle").css('background', 'white');
             $("#widgetgoogle").css('overflow', 'scroll');
             $('#widgetgoogle').css('flex-shrink', '1');
@@ -233,7 +233,7 @@ $(document).ready(function() {
         $(document).on('click', '#loupegoogle', function() {
 
             var search = $('#inputgoogle').val();
-            $("#widgetgoogle").empty();
+            $("#widgetgoogle").remove();
             $("#widgetgoogle").css('background', 'white');
             $("#widgetgoogle").css('overflow', 'scroll');
             $('#widgetgoogle').css('flex-shrink', '1');

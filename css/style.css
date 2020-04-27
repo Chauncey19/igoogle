@@ -3,7 +3,6 @@
     background: rgba(0, 0, 0, 0.979);
 }
 
-html,
 body {
     background: url(../images/background.jpg) no-repeat center fixed;
     margin: 0;
@@ -23,10 +22,26 @@ body {
 #widgetmeteo,
 #widgetgoogle,
 #widgettwitter,
-#widgetmaps, #widgetflickr {
+#widgetmaps,
+#widgetflickr,
+#widgethorloge {
     height: 20rem;
 }
 
 #map {
     height: 18rem;
+}
+
+#ml {
+    background: white;
+    width: 80%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto
+}
+
+#mentions {
+    position: absolute;
+    top: 90%;
+    left: 50%;
 }
