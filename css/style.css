@@ -3,13 +3,13 @@
     background: rgba(0, 0, 0, 0.979);
 }
 
-#back2 {
-    background: url('../images/background.jpg');
-    height: 55rem;
-}
-
-#back3 {
-    height: 4rem;
+html,
+body {
+    background: url(../images/background.jpg) no-repeat center fixed;
+    margin: 0;
+    padding: 0;
+    -webkit-background-size: cover;
+    background-size: cover;
 }
 
 .pt-2 {
@@ -24,9 +24,9 @@
 #widgetgoogle,
 #widgettwitter,
 #widgetmaps {
-    height: 22rem;
+    height: 20rem;
 }
 
 #map {
-    height: 20rem;
+    height: 18rem;
 }
