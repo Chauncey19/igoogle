@@ -23,7 +23,7 @@ body {
 #widgetmeteo,
 #widgetgoogle,
 #widgettwitter,
-#widgetmaps {
+#widgetmaps, #widgetflickr {
     height: 20rem;
 }
 
