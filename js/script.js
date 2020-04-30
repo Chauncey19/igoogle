@@ -146,14 +146,14 @@ $(document).ready(function() {
 
 
     });
-    var clicgoogle = 0;
+
     // widget ouverture google search + requete ajax
     $("#loupe").click(function() {
-        if (clicgoogle == 0) {
-            $("#back2").append(' <div class="col-md-3 mt-3 mr-3 mb-3 ml-5" id="widgetgoogle"></div>');
-        }
-    });
 
+        $("#back2").append(' <div class="col-md-3 mt-3 mr-3 mb-3 ml-5" id="widgetgoogle"></div>');
+
+    });
+    var clicgoogle = 0;
     $(document).on('click', '#loupe', function() {
         if (clicgoogle == 0) {
             var search = $('#inputsearch').val();
@@ -161,7 +161,7 @@ $(document).ready(function() {
             $("#widgetgoogle").css('background', 'white');
             $("#widgetgoogle").css('overflow', 'scroll');
             $('#widgetgoogle').css('flex-shrink', '1');
-            $("#widgettgoogle").css('border-radius', '5px');
+            $("#widgetgoogle").css('border-radius', '5px');
             $("#widgetgoogle").append('<div class="row bg-dark"> <input class=" ml-auto pr-3 pt-3 pb-2 " type="image" alt="google" src="./images/croix.png" height="50rem" id="croixgoogle"></div>');
             $("#widgetgoogle").append('<h1 class="pt-3 h-25 text-center">Google</h1>');
             $("#widgetgoogle").append('<form class="form-inline ml-3" id="formgoogle"></form>');
@@ -205,7 +205,7 @@ $(document).ready(function() {
             $("#widgetgoogle").css('background', 'white');
             $("#widgetgoogle").css('overflow', 'scroll');
             $('#widgetgoogle').css('flex-shrink', '1');
-            $("#widgettgoogle").css('border-radius', '5px');
+            $("#widgetgoogle").css('border-radius', '5px');
             $("#widgetgoogle").append('<div class="row bg-dark"> <input class=" ml-auto pr-3 pt-3 pb-2 " type="image" alt="google" src="./images/croix.png" height="50rem" id="croixgoogle"></div>');
             $("#widgetgoogle").append('<h1 class="pt-3 h-25 text-center">Google</h1>');
             $("#widgetgoogle").append('<form class="form-inline ml-3" id="formgoogle"></form>');
@@ -235,29 +235,23 @@ $(document).ready(function() {
 
             });
 
-            event.preventDefault();
 
         }
 
-
-
-
     });
 
-    $(document).on('click', '#widgetgoogle', function() {
-        $(this).draggable();
-    });
+
     // widget ouverture google search + requete ajax loupe
     $(document).ready(function() {
         $(document).on('click', '#loupegoogle', function() {
 
             var search = $('#inputgoogle').val();
-            $("#widgetgoogle").remove();
+            $("#widgetgoogle").empty();
             $("#widgetgoogle").css('background', 'white');
             $("#widgetgoogle").css('overflow', 'scroll');
             $('#widgetgoogle').css('flex-shrink', '1');
-            $("#widgettgoogle").css('border-radius', '5px');
-            $("#widgetgoogle").append('<div class="row bg-dark"> <input class=" ml-auto pr-3 pt-3 pb-2 " type="image" alt="google" src="./images/croix.png" height="50rem" id="croixgoogle"></div>');
+            $("#widgetgoogle").css('border-radius', '5px');
+            $("#widgetgoogle").append('<div class="row bg-dark"> <input class="ml-auto pr-3 pt-3 pb-2 " type="image" alt="google" src="./images/croix.png" height="50rem" id="croixgoogle"></div>');
             $("#widgetgoogle").append('<h1 class="pt-3 h-25 text-center">Google</h1>');
             $("#widgetgoogle").append('<form class="form-inline ml-3" id="formgoogle"></form>');
             $("#formgoogle").append('<input type="name" class="form-control w-75" id="inputgoogle" placeholder="search">');
@@ -291,6 +285,10 @@ $(document).ready(function() {
 
 
         });
+    });
+
+    $(document).on('click', '#widgetgoogle', function() {
+        $(this).draggable();
     });
     // widget fermeture google search
     $(document).on('click', '#croixgoogle', function() {
