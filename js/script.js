@@ -1,18 +1,22 @@
 $(document).ready(function() {
 
+    var clicmeteo = 0;
     // widget ouverture meteo
     $("#meteo").click(function() {
-        $("#back2").append(' <div class="col-md-3 mt-3 mr-3 mb-3 ml-5" id="widgetmeteo"></div>');
+        if (clicmeteo == 0) {
+            $("#back2").append(' <div class="col-md-3 mt-3 mr-3 mb-3 ml-5" id="widgetmeteo"></div>');
+
+        }
     });
 
 
-    var clicmeteo = 0;
+
     $(document).on('click', '#meteo', function() {
 
         if (clicmeteo == 0) {
             $("#widgetmeteo").css('background', 'white');
             $("#widgetmeteo").css('border-radius', '5px');
-            $("#widgetmeteo").append('<div class="row bg-dark"> <input class=" offset-md-10 pr-3 pt-3 pb-2" type="image" alt="meteo" src="./images/croix.png" height="50rem" id="croixmeteo"></div>');
+            $("#widgetmeteo").append('<div class="row bg-dark"> <input class="ml-auto pr-3 pt-3 pb-2" type="image" alt="meteo" src="./images/croix.png" height="50rem" id="croixmeteo"></div>');
             $("#widgetmeteo").append('<h1 class="pt-3 h-25 text-center">Météo</h1>');
             $("#widgetmeteo").append('<form class="form-inline ml-3" id="formmeteo"></form>');
             $("#formmeteo").append('<input type="name" class="form-control w-75" id="inputmeteo" placeholder="Entrez une ville">');
@@ -23,6 +27,9 @@ $(document).ready(function() {
 
     });
 
+    $(document).on('click', '#widgetmeteo', function() {
+        $(this).draggable();
+    });
 
     // widget fermeture meteo
     $(document).on('click', '#croixmeteo', function() {
@@ -93,21 +100,23 @@ $(document).ready(function() {
 
     });
 
-
+    var clictwit = 0;
     // widget ouverture et requete twitter
     $("#twitter").click(function() {
-        $("#back2").append(' <div class="col-md-3 mt-3 mr-3 mb-3 ml-5" id="widgettwitter"></div>');
+        if (clictwit == 0) {
+            $("#back2").append(' <div class="col-md-3 mt-3 mr-3 mb-3 ml-5" id="widgettwitter"></div>');
+        }
     });
 
 
-    var clictwit = 0;
+
     $(document).on('click', '#twitter', function() {
 
         if (clictwit == 0) {
             $("#widgettwitter").css('background', 'white');
             $("#widgettwitter").css('border-radius', '5px');
             $("#widgettwitter").css('overflow', 'scroll');
-            $("#widgettwitter").append('<div class="row bg-dark"> <input class=" offset-md-10 pr-3 pt-3 pb-2 " type="image" alt="meteo" src="./images/croix.png" height="50rem" id="croixtwitter"></div>');
+            $("#widgettwitter").append('<div class="row bg-dark"> <input class="ml-auto pr-3 pt-3 pb-2 " type="image" alt="meteo" src="./images/croix.png" height="50rem" id="croixtwitter"></div>');
             $("#widgettwitter").append('<h1 class="pt-3 h-25 text-center">Twitter</h1>');
             $("#widgettwitter").append('<a class="twitter-timeline" href="https://twitter.com/MichelBillaud?ref_src=twsrc%5Etfw">Tweets by MichelBillaud</a>');
             $("#widgettwitter").append('<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>');
@@ -116,6 +125,10 @@ $(document).ready(function() {
 
         }
 
+    });
+
+    $(document).on('click', '#widgettwitter', function() {
+        $(this).draggable();
     });
 
     // widget fermeture twitter
@@ -133,12 +146,14 @@ $(document).ready(function() {
 
 
     });
-
+    var clicgoogle = 0;
     // widget ouverture google search + requete ajax
     $("#loupe").click(function() {
-        $("#back2").append(' <div class="col-md-3 mt-3 mr-3 mb-3 ml-5" id="widgetgoogle"></div>');
+        if (clicgoogle == 0) {
+            $("#back2").append(' <div class="col-md-3 mt-3 mr-3 mb-3 ml-5" id="widgetgoogle"></div>');
+        }
     });
-    var clicgoogle = 0;
+
     $(document).on('click', '#loupe', function() {
         if (clicgoogle == 0) {
             var search = $('#inputsearch').val();
@@ -147,7 +162,7 @@ $(document).ready(function() {
             $("#widgetgoogle").css('overflow', 'scroll');
             $('#widgetgoogle').css('flex-shrink', '1');
             $("#widgettgoogle").css('border-radius', '5px');
-            $("#widgetgoogle").append('<div class="row bg-dark"> <input class=" offset-md-10 pr-3 pt-3 pb-2 " type="image" alt="google" src="./images/croix.png" height="50rem" id="croixgoogle"></div>');
+            $("#widgetgoogle").append('<div class="row bg-dark"> <input class=" ml-auto pr-3 pt-3 pb-2 " type="image" alt="google" src="./images/croix.png" height="50rem" id="croixgoogle"></div>');
             $("#widgetgoogle").append('<h1 class="pt-3 h-25 text-center">Google</h1>');
             $("#widgetgoogle").append('<form class="form-inline ml-3" id="formgoogle"></form>');
             $("#formgoogle").append('<input type="name" class="form-control w-75" id="inputgoogle" placeholder="Nom">');
@@ -191,7 +206,7 @@ $(document).ready(function() {
             $("#widgetgoogle").css('overflow', 'scroll');
             $('#widgetgoogle').css('flex-shrink', '1');
             $("#widgettgoogle").css('border-radius', '5px');
-            $("#widgetgoogle").append('<div class="row bg-dark"> <input class=" offset-md-10 pr-3 pt-3 pb-2 " type="image" alt="google" src="./images/croix.png" height="50rem" id="croixgoogle"></div>');
+            $("#widgetgoogle").append('<div class="row bg-dark"> <input class=" ml-auto pr-3 pt-3 pb-2 " type="image" alt="google" src="./images/croix.png" height="50rem" id="croixgoogle"></div>');
             $("#widgetgoogle").append('<h1 class="pt-3 h-25 text-center">Google</h1>');
             $("#widgetgoogle").append('<form class="form-inline ml-3" id="formgoogle"></form>');
             $("#formgoogle").append('<input type="name" class="form-control w-75" id="inputgoogle" placeholder="Nom">');
@@ -228,6 +243,10 @@ $(document).ready(function() {
 
 
     });
+
+    $(document).on('click', '#widgetgoogle', function() {
+        $(this).draggable();
+    });
     // widget ouverture google search + requete ajax loupe
     $(document).ready(function() {
         $(document).on('click', '#loupegoogle', function() {
@@ -238,7 +257,7 @@ $(document).ready(function() {
             $("#widgetgoogle").css('overflow', 'scroll');
             $('#widgetgoogle').css('flex-shrink', '1');
             $("#widgettgoogle").css('border-radius', '5px');
-            $("#widgetgoogle").append('<div class="row bg-dark"> <input class=" offset-md-10 pr-3 pt-3 pb-2 " type="image" alt="google" src="./images/croix.png" height="50rem" id="croixgoogle"></div>');
+            $("#widgetgoogle").append('<div class="row bg-dark"> <input class=" ml-auto pr-3 pt-3 pb-2 " type="image" alt="google" src="./images/croix.png" height="50rem" id="croixgoogle"></div>');
             $("#widgetgoogle").append('<h1 class="pt-3 h-25 text-center">Google</h1>');
             $("#widgetgoogle").append('<form class="form-inline ml-3" id="formgoogle"></form>');
             $("#formgoogle").append('<input type="name" class="form-control w-75" id="inputgoogle" placeholder="search">');
@@ -283,19 +302,22 @@ $(document).ready(function() {
 
 
     });
+    var clicmaps = 0;
     // widget ouverture maps + requete
     $("#maps").click(function() {
-        $("#back2").append(' <div class="col-md-3 mt-3 mr-3 mb-3 ml-5" id="widgetmaps"></div>');
+        if (clicmaps == 0) {
+            $("#back2").append(' <div class="col-md-3 mt-3 mr-3 mb-3 ml-5" id="widgetmaps"></div>');
+        }
     });
 
-    var clicmaps = 0;
+
     $(document).on('click', '#maps', function() {
 
         if (clicmaps == 0) {
             $("#widgetmaps").css('background', 'white');
             $("#widgetmaps").css('overflow', 'scroll');
             $("#widgetmaps").css('border-radius', '5px');
-            $("#widgetmaps").append('<div class="row bg-dark"> <input class=" offset-md-10 pr-3 pt-3 pb-2 " type="image" alt="google" src="./images/croix.png" height="50rem" id="croixmaps"></div>');
+            $("#widgetmaps").append('<div class="row bg-dark"> <input class=" ml-auto pr-3 pt-3 pb-2 " type="image" alt="google" src="./images/croix.png" height="50rem" id="croixmaps"></div>');
             $("#widgetmaps").append('<h1 class="pt-3 h-25 text-center">Google Maps</h1>');
             $("#widgetmaps").append('<div class="text-center"><iframe  id="map" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=bordeaux+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="yes" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/draw-radius-circle-map/"></a></iframe></div>');
             clicmaps = 1;
@@ -305,6 +327,10 @@ $(document).ready(function() {
 
 
 
+    });
+
+    $(document).on('click', '#widgetmaps', function() {
+        $(this).draggable();
     });
     // widget fermeture maps
     $(document).on('click', '#croixmaps', function() {
@@ -321,13 +347,15 @@ $(document).ready(function() {
 
 
     });
-
+    var clichorloge = 0;
     // widget ouverture horloge
     $("#Horloge").click(function() {
-        $("#back2").append(' <div class="col-md-3 mt-3 mr-3 mb-3 ml-5" id="widgethorloge"></div>');
+        if (clichorloge == 0) {
+            $("#back2").append(' <div class="col-md-3 mt-3 mr-3 mb-3 ml-5" id="widgethorloge"></div>');
+        }
     });
 
-    var clichorloge = 0;
+
 
     $(document).on('click', '#Horloge', function date() {
 
@@ -337,7 +365,7 @@ $(document).ready(function() {
             $("#widgethorloge").css('background', 'white');
             $("#widgethorloge").css('border-radius', '5px');
 
-            $("#widgethorloge").append('<div class="row bg-dark"> <input class=" offset-md-10 pr-3 pt-3 pb-2 " type="image" alt="meteo" src="./images/croix.png" height="50rem" id="croixHorloge"></div>');
+            $("#widgethorloge").append('<div class="row bg-dark"> <input class=" ml-auto pr-3 pt-3 pb-2 " type="image" alt="meteo" src="./images/croix.png" height="50rem" id="croixHorloge"></div>');
             $("#widgethorloge").append('<h1 class="pt-3 h-25 text-center">Horloge</h1>');
             $("#widgethorloge").append('<p class="text-center" id="txthorloge">' + d + '</p>');
             event.preventDefault();
@@ -347,7 +375,9 @@ $(document).ready(function() {
 
     });
 
-
+    $(document).on('click', '#widgethorloge', function() {
+        $(this).draggable();
+    });
     // widget fermeture horloge
     $(document).on('click', '#croixHorloge', function() {
 
@@ -361,12 +391,15 @@ $(document).ready(function() {
 
     });
 
+    var clicflickr = 0;
     // widget ouverture flickr
     $("#flickr").click(function() {
-        $("#back2").append(' <div class="col-md-3 mt-3 mr-3 mb-3 ml-5 text-center" id="widgetflickr"></div>');
+        if (clicflickr == 0) {
+            $("#back2").append(' <div class="col-md-3 mt-3 mr-3 mb-3 ml-5 text-center" id="widgetflickr"></div>');
+        }
     });
 
-    var clicflickr = 0;
+
     $(document).on('click', '#flickr', function() {
 
         if (clicflickr == 0) {
@@ -374,7 +407,7 @@ $(document).ready(function() {
             $("#widgetflickr").css('background', 'white');
             $("#widgetflickr").css('border-radius', '5px');
             $("#widgetflickr").css('overflow', 'scroll');
-            $("#widgetflickr").append('<div class="row bg-dark"> <input class=" offset-md-10 pr-3 pt-3 pb-2 " type="image" alt="flickr" src="./images/croix.png" height="50rem" id="croixflickr"></div>');
+            $("#widgetflickr").append('<div class="row bg-dark"> <input class="ml-auto pr-3 pt-3 pb-2 " type="image" alt="flickr" src="./images/croix.png" height="50rem" id="croixflickr"></div>');
             $("#widgetflickr").append('<h1 class="pt-3 h-25 text-center">Flickr</h1>');
             $("#widgetflickr").append('<form class="form-inline ml-3" id="formflickr"></form>');
             $("#formflickr").append('<input type="name" class="form-control w-75" id="inputflickr" placeholder="Choisir image">');
@@ -384,6 +417,10 @@ $(document).ready(function() {
         }
 
 
+    });
+
+    $(document).on('click', '#widgetflickr', function() {
+        $(this).draggable();
     });
 
     // widget fermeture flickr

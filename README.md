@@ -1,6 +1,6 @@
 # Chauncey19.github.io
 
-Fonctionnalitées ok :
+Fonctionnalitées widgets :
 
 -widget twitter
 -widget maps
@@ -10,4 +10,8 @@ Fonctionnalitées ok :
 -widget horloge
 
 
+Drag&Drop ok mais latence de quelques secondes
+
 Mentions légales ok
+
+Responsive ok

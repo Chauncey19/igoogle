@@ -40,12 +40,6 @@ body {
     margin-right: auto
 }
 
-#mentions {
-    position: absolute;
-    top: 90%;
-    left: 50%;
-}
-
-#accueil{
-padding:2rem;
+#accueil {
+    padding: 2rem;
 }
