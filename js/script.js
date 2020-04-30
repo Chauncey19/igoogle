@@ -201,7 +201,7 @@ $(document).ready(function() {
             var search = $('#inputsearch').val();
             $("#widgetgoogle").css("background", "");
             $("#widgetgoogle").css('overflow', 'hidden');
-            $("#widgetgoogle").remove();
+            $("#widgetgoogle").empty();
             $("#widgetgoogle").css('background', 'white');
             $("#widgetgoogle").css('overflow', 'scroll');
             $('#widgetgoogle').css('flex-shrink', '1');
@@ -235,7 +235,7 @@ $(document).ready(function() {
 
             });
 
-
+            event.preventDefault();
         }
 
     });
