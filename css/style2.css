@@ -1,9 +1,9 @@
 #back1 {
-    background: rgb(52, 58, 64);
+    background: whitesmoke;
 }
 
 body {
-    background: url(../images/background.jpg) no-repeat center fixed;
+    background: url(../images/dune.jpg) no-repeat center fixed;
     margin: 0;
     padding: 0;
     -webkit-background-size: cover;
@@ -11,7 +11,7 @@ body {
 }
 
 .pt-2 {
-    color: white;
+    color: black;
 }
 
 #txtmeteo {
@@ -44,5 +44,5 @@ body {
 }
 
 #widgetrow {
-    background: rgb(52, 58, 64);
+    background: rgb(51, 102, 204);
 }

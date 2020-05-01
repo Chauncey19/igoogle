@@ -1,9 +1,9 @@
 #back1 {
-    background: rgb(52, 58, 64);
+    background: rgb(45, 134, 45);
 }
 
 body {
-    background: url(../images/background.jpg) no-repeat center fixed;
+    background: url(../images/guepard.jpg) no-repeat center fixed;
     margin: 0;
     padding: 0;
     -webkit-background-size: cover;
@@ -44,5 +44,5 @@ body {
 }
 
 #widgetrow {
-    background: rgb(52, 58, 64);
+    background: rgb(45, 134, 45);
 }

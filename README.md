@@ -10,8 +10,12 @@ Fonctionnalitées widgets :
 -widget horloge
 
 
-Drag&Drop ok mais latence de quelques secondes
+Drag&Drop ok mais latence au 1er clic
 
 Mentions légales ok
 
 Responsive ok
+
+bouton changement de styles : 3 styles
+
+Pistes d'amélioration : accessiblité, compression images
