@@ -16,10 +16,10 @@ $(document).ready(function() {
         if (clicmeteo == 0) {
             $("#widgetmeteo").css('background', 'white');
             $("#widgetmeteo").css('border-radius', '5px');
-            $("#widgetmeteo").append('<div class="row" id="widgetrow"> <input class="ml-auto pr-3 pt-3 pb-2" type="image" alt="meteo" src="./images/croix.png" height="50" id="croixmeteo"></div>');
+            $("#widgetmeteo").append('<div class="row " id="widgetrow"> <input class="ml-auto pr-3 pt-3 pb-2" type="image" alt="meteo" src="./images/croix.png" height="50" id="croixmeteo"></div>');
             $("#widgetmeteo").append('<h1 class="pt-3 h-25 text-center">Météo</h1>');
-            $("#widgetmeteo").append('<form class="form-inline justify-content-center ml-3" id="formmeteo"></form>');
-            $("#formmeteo").append('<input type="search" class="form-control w-75" id="inputmeteo" placeholder="Entrez une ville">');
+            $("#widgetmeteo").append('<form class="form-inline justify-content-center ml-3" id="formmeteo" role="search"></form>');
+            $("#formmeteo").append('<input type="search" class="form-control w-75" id="inputmeteo" placeholder="Entrez une ville" aria-label="Entrez ville météo">');
             $("#formmeteo").append('<input class="pl-3 pt-1" type="image" alt="meteo" src="./images/loupe.png" height="40" id="loupemeteo">');
             event.preventDefault();
             clicmeteo = 1;
@@ -164,8 +164,8 @@ $(document).ready(function() {
             $("#widgetgoogle").css('border-radius', '5px');
             $("#widgetgoogle").append('<div class="row" id="widgetrow"> <input class=" ml-auto pr-3 pt-3 pb-2 " type="image" alt="google" src="./images/croix.png" height="50" id="croixgoogle"></div>');
             $("#widgetgoogle").append('<h1 class="pt-3 h-25 text-center">Google</h1>');
-            $("#widgetgoogle").append('<form class="form-inline justify-content-center  ml-3" id="formgoogle"></form>');
-            $("#formgoogle").append('<input type="search" class="form-control w-75" id="inputgoogle" placeholder="search">');
+            $("#widgetgoogle").append('<form class="form-inline justify-content-center  ml-3" id="formgoogle" role="search"></form>');
+            $("#formgoogle").append('<input type="search" class="form-control w-75" id="inputgoogle" placeholder="search" aria-label="search google">');
             $("#formgoogle").append('<input type="image" class="ml-3 pt-1" src="./images/loupe.png" alt="google" height="30" id="loupegoogle">');
 
             event.preventDefault();
@@ -208,8 +208,8 @@ $(document).ready(function() {
             $("#widgetgoogle").css('border-radius', '5px');
             $("#widgetgoogle").append('<div class="row" id="widgetrow"> <input class=" ml-auto pr-3 pt-3 pb-2 " type="image" alt="google" src="./images/croix.png" height="50" id="croixgoogle"></div>');
             $("#widgetgoogle").append('<h1 class="pt-3 h-25 text-center">Google</h1>');
-            $("#widgetgoogle").append('<form class="form-inline justify-content-center  ml-3" id="formgoogle"></form>');
-            $("#formgoogle").append('<input type="search" class="form-control w-75" id="inputgoogle" placeholder="search">');
+            $("#widgetgoogle").append('<form class="form-inline justify-content-center  ml-3" id="formgoogle" role="search"></form>');
+            $("#formgoogle").append('<input type="search" class="form-control w-75" id="inputgoogle" placeholder="search" role="search google">');
             $("#formgoogle").append('<input type="image" class="ml-3 pt-1" src="./images/loupe.png" alt="google" height="30" id="loupegoogle">');
 
             event.preventDefault();
@@ -253,8 +253,8 @@ $(document).ready(function() {
             $("#widgetgoogle").css('border-radius', '5px');
             $("#widgetgoogle").append('<div class="row" id="widgetrow"> <input class="ml-auto pr-3 pt-3 pb-2 " type="image" alt="google" src="./images/croix.png" height="50" id="croixgoogle"></div>');
             $("#widgetgoogle").append('<h1 class="pt-3 h-25 text-center">Google</h1>');
-            $("#widgetgoogle").append('<form class="form-inline justify-content-center  ml-3" id="formgoogle"></form>');
-            $("#formgoogle").append('<input type="search" class="form-control w-75" id="inputgoogle" placeholder="search">');
+            $("#widgetgoogle").append('<form class="form-inline justify-content-center  ml-3" id="formgoogle" role="search"></form>');
+            $("#formgoogle").append('<input type="search" class="form-control w-75" id="inputgoogle" placeholder="search" role="search google">');
             $("#formgoogle").append('<input type="image" class="ml-3 pt-1" src="./images/loupe.png" alt="google" height="30" id="loupegoogle">');
 
 
@@ -273,7 +273,7 @@ $(document).ready(function() {
 
                     for (var i = 0; i < response.items.length; i++) {
                         console.log(`${response.items[i].title}`);
-                        // in production code, item.htmlTitle should have the HTML entities escaped.
+
                         $("#widgetgoogle").append('<p>' + `${response.items[i].title}` + '</p>');
                     }
                     $('#widgetgoogle').css('font-weight', 'bold');
@@ -362,7 +362,6 @@ $(document).ready(function() {
             var d = new Date();
             $("#widgethorloge").css('background', 'white');
             $("#widgethorloge").css('border-radius', '5px');
-
             $("#widgethorloge").append('<div class="row" id="widgetrow"> <input class=" ml-auto pr-3 pt-3 pb-2 " type="image" alt="meteo" src="./images/croix.png" height="50" id="croixHorloge"></div>');
             $("#widgethorloge").append('<h1 class="pt-3 h-25 text-center">Horloge</h1>');
             $("#widgethorloge").append('<p class="text-center" id="txthorloge">' + d + '</p>');
@@ -407,8 +406,8 @@ $(document).ready(function() {
             $("#widgetflickr").css('overflow', 'scroll');
             $("#widgetflickr").append('<div class="row" id="widgetrow"> <input class="ml-auto pr-3 pt-3 pb-2 " type="image" alt="flickr" src="./images/croix.png" height="50" id="croixflickr"></div>');
             $("#widgetflickr").append('<h1 class="pt-3 h-25 text-center">Flickr</h1>');
-            $("#widgetflickr").append('<form class="form-inline justify-content-center  ml-3" id="formflickr"></form>');
-            $("#formflickr").append('<input type="search" class="form-control w-75" id="inputflickr" placeholder="Choisir image">');
+            $("#widgetflickr").append('<form class="form-inline justify-content-center  ml-3" id="formflickr" role="search"></form>');
+            $("#formflickr").append('<input type="search" class="form-control w-75" id="inputflickr" placeholder="Choisir image" aria-label="search image">');
             $("#formflickr").append('<input class="pl-3 pt-1" type="image" alt="flickr" src="./images/loupe.png" height="40" id="loupeflickr">');
             event.preventDefault();
             clicflickr = 1;
